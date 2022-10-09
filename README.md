@@ -1,4 +1,4 @@
-Django REST API Basic Auth
+Django REST API JWT Auth
 ========================
 
 ### Description
@@ -6,6 +6,18 @@ Django REST API Basic Auth
 -   Django generic permission system integrated;
 -   Custom exception handlers;
 -   Best practices for configuration split and project structure;
+
+### Workflow
+1.  A user is REGISTERed in the database.
+2.  In order to LOGIN, we pass username and password in the request payload.
+3.  The request will retrieve an ACCESS token and a REFRESH token.
+4.  The ACCESS token will be passed in all the other request headers as value for 'Authorization' key. It has to start with 'Bearer' followed by a space and then the key. This way someone can access resources that require authentication.
+5.  Once a certain time interval passes, the ACCESS token will be invalid.
+6.  In order to get a new ACCESS token we will send a request that takes the REFRESH token previously generated as payload.
+7.  The result of the call will be a new access token with the same time interval validity.
+8.  When a user performs a log out, we blacklist both ACCESS and REFRESH tokens in order for them to not be used further.
+
+*  Note: If the REFRESH token is lost then the user will require to do a new LOGIN request after the ACCESS token expires. 
 
 ## Code quality
 
@@ -16,13 +28,13 @@ Django REST API Basic Auth
 - Pylint used to maintain code quality;
 - Current status: `Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)`
 
-### Requirements
+## Requirements
 
 -   It is assumed that you have Python. If not, then download the latest versions from:
     * [Python](https://www.python.org/downloads/)
     * [PostgreSQL](https://www.postgresql.org/download/)
     
-### Installation
+## Installation
 
 1. **Clone git repository**:
     ```bash
