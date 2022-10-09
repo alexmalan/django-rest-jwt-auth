@@ -2,7 +2,7 @@ asgiref==3.5.2
 astroid==2.12.10
 attrs==22.1.0
 black==22.8.0
-certifi @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_05nm_gqf36/croots/recipe/certifi_1663615689491/work/certifi
+certifi
 click==8.1.3
 dill==0.3.5.1
 Django==4.1.1
