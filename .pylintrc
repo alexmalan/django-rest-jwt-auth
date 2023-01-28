@@ -1,0 +1,42 @@
+[MASTER]
+# Profiled execution.
+profile=no
+
+# Add <file or directory> to the black list.
+# It should be a base name, not a path. You may set this option multiple times.
+ignore=.git,migrations,tests
+
+[MESSAGES CONTROL]
+disable=R0801, E1101, R0201, R0903, W0707, R1710, W0703, E0213, C0103, E0015, R0022, C0301, W0613
+
+[FORMAT]
+
+# Maximum number of characters on a single line.
+max-line-length=100
+
+# Maximum number of lines in a module
+max-module-lines=1000
+
+# String used as indentation unit. This is usually " " (4 spaces) or "\t" (1
+# tab).
+indent-string='    '
+
+[REPORTS]
+
+reports=no
+
+# Set the output format. Available formats are text, parseable, colorized
+# (visual studio) and html
+output-format=colorized
+
+# Include message's id in output
+include-ids=yes
+
+# Checks for:
+# * warning notes in the code like FIXME, BUG, TODO
+# * PEP 263: source code with non ascii character but no encoding declaration
+#
+[MISCELLANEOUS]
+
+# List of note tags to take in consideration, separated by a comma.
+notes=FIXME,BUG,TODO
